@@ -31,3 +31,8 @@
 .deleteButton:hover {
   background-color: rgba(220, 53, 69, 0.1);
 }
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
