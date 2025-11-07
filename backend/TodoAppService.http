@@ -1,6 +1,6 @@
 @TodoAppService_HostAddress = http://localhost:5223
 
-GET {{TodoAppService_HostAddress}}/weatherforecast/
+GET {{TodoAppService_HostAddress}}/api/Tasks
 Accept: application/json
 
 ###
