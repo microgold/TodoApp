@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using TodoApp.Api.Controllers;
 using TodoApp.Api.Data;
 using TodoApp.Api.Models;
 using Microsoft.AspNetCore.Mvc;
-using Xunit;
+using TodoApp.Controllers;
+using TodoApp.Services;
 
 namespace TodoApp.Tests
 {
@@ -24,7 +24,8 @@ namespace TodoApp.Tests
         public async Task GetAll_ReturnsOk()
         {
             var ctx = GetInMemoryContext();
-            var controller = new TasksController(ctx);
+            TaskService service = new TaskService(ctx);
+            var controller = new TasksController(service);
             var result = await controller.GetAll();
             Assert.IsType<OkObjectResult>(result);
         }
@@ -33,7 +34,8 @@ namespace TodoApp.Tests
         public async Task Create_AddsTask()
         {
             var ctx = GetInMemoryContext();
-            var controller = new TasksController(ctx);
+            TaskService service = new TaskService(ctx);
+            var controller = new TasksController(service);
             var newTask = new TaskItem { Title = "New Task" };
             var result = await controller.Create(newTask);
             Assert.IsType<CreatedAtActionResult>(result);

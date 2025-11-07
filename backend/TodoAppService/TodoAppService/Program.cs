@@ -32,6 +32,7 @@
 using Microsoft.EntityFrameworkCore;
 using TodoApp.Api.Data;
 using TodoApp.Api.Models;
+using TodoApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -39,6 +40,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlite("Data Source = todo.db"));
 builder.Services.AddCors(opt => opt.AddPolicy("AllowAll", p => p.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()));
+builder.Services.AddScoped<ITaskService, TaskService>(); 
 
 var app = builder.Build();
 
