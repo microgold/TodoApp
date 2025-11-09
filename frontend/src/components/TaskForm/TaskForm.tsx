@@ -20,6 +20,7 @@ export default function TaskForm() {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="New task..."
+        required
       />
       <button type="submit">Add</button>
     </form>
