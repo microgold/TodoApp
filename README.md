@@ -1,4 +1,4 @@
-# 🧩 TodoApp
+#  TodoApp
 
 A **full-stack to-do task management application** built with:
 
@@ -32,7 +32,7 @@ It’s designed to showcase:
 
 ## ⚙️ Setup & Running the Application
 
-### 🧱 Prerequisites
+### Prerequisites
 
 * [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download)
 * [Node.js 18+](https://nodejs.org/en/download)
@@ -41,7 +41,7 @@ It’s designed to showcase:
 
 ---
 
-### 🚀 Run Backend
+### Run Backend
 
 ```bash
 cd backend
@@ -59,7 +59,7 @@ http://localhost:5223/swagger
 
 ---
 
-### 💻 Run Frontend
+### Run Frontend
 
 ```bash
 cd frontend
@@ -77,7 +77,7 @@ VITE_API_BASE_URL=http://localhost:5223/api
 
 ---
 
-### 🧪 Run Tests
+### Run Tests
 
 ```bash
 cd Todo.Test
@@ -88,7 +88,7 @@ Unit tests are implemented with **xUnit** using the **EF Core InMemory provider*
 
 ---
 
-### 🧰 Rebuild or Reset Database
+### Rebuild or Reset Database
 
 ```bash
 cd backend
@@ -99,7 +99,7 @@ You can also delete `todo.db` and EF Core will re-create it on next run.
 
 ---
 
-## 🧩 Architecture Overview
+## Architecture Overview
 
 ### Backend (.NET 8 Web API)
 
@@ -192,7 +192,7 @@ Each toggle updates Redux state and persists via an API `PUT` call to `/api/task
 
 ---
 
-## 🧠 Trade-offs & Assumptions
+##  Trade-offs & Assumptions
 
 * **Single-user app:** No authentication implemented for simplicity.
 * **SQLite chosen** for easy local setup. EF Core can switch to SQL Server or PostgreSQL with minimal config changes.
@@ -202,25 +202,45 @@ Each toggle updates Redux state and persists via an API `PUT` call to `/api/task
 
 ---
 
-## 🚀 Future Enhancements (Production MVP)
+## Future Enhancements (Production MVP)
 
-1. **Authentication & Authorization**
+1. **Authentication & Authorization**  
    Add JWT-based login and per-user task storage.
-2. **Pagination & Filtering**
+
+2. **Pagination & Filtering**  
    Support large datasets efficiently.
-3. **Task Categories / Due Dates / Priorities**
-4. **UI Improvements**
+
+3. **Task Categories / Due Dates / Priorities**  
+   Extend task model and UI to support organization and scheduling.
+
+4. **UI Improvements**  
    Better UX with modals, animations, and Material UI.
-5. **Persistent storage abstraction**
-   Introduce repository pattern or CQRS for scaling.
-6. **Containerization**
-   Add Dockerfile + docker-compose for full environment parity.
-7. **Monitoring / Metrics**
-   Add Serilog or Application Insights for production logging.
+
+5. **Page Navigation & Routing**  
+   Implement client-side routing (e.g., React Router) to support multi-page views such as Tasks, Dashboard, and Settings.
+
+6. **Persistent Storage Abstraction**  
+   Introduce repository pattern or CQRS for scaling and maintainability.
+
+7. **Real-Time Updates**  
+   Use SignalR or WebSockets to push instant task changes to all connected clients.
+
+8. **Low-Latency Task Handling**  
+   Implement asynchronous background workers or in-memory queues for fast request processing under load.
+
+9. **Caching Layer**  
+   Add MemoryCache or Redis to reduce database round-trips and improve response times.
+
+10. **Containerization**  
+   Add Dockerfile and docker-compose for full environment parity.
+
+11. **Monitoring / Metrics**  
+    Integrate Serilog or Application Insights for production observability and performance tracking.
+
 
 ---
 
-## 🧾 Summary
+## Summary
 
 This project demonstrates:
 
