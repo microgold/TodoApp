@@ -77,11 +77,18 @@ VITE_API_BASE_URL=http://localhost:5223/api
 
 ---
 
-### Run Tests
+### Run Backend Tests
 
 ```bash
 cd Todo.Test
 dotnet test
+```
+
+### Run Frontend Tests
+
+```bash
+cd frontend
+npm run test
 ```
 
 Unit tests are implemented with **xUnit** using the **EF Core InMemory provider** for fast, isolated database testing.
