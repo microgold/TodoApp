@@ -14,5 +14,12 @@ export default defineConfig(({ mode }) => {
       port: 5173,
       open: true,
     },
+    test: {
+    environment: 'jsdom',
+    setupFiles: './src/setupTests.ts',
+    css: true,
+    globals: true, // lets you use expect() without import if you like
+    alias: { },   // if you use path aliases, mirror them here
+    }
   };
 });
